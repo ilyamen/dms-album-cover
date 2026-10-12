@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "DMS Album Cover",
+  "version": "1.0.0",
+  "description": "Passes the full-size cover of the playing track (navigator.mediaSession) to the Album Cover widget of DankMaterialShell. Nothing leaves the computer.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwDvkfYvHxo8DZFpHXy0f2jgi3s03C/sTQ+Vu9dZeXCXDT2+qF/uGxpocx+U8Xr40XDRqsiCDAFNOME9a4qJH7R1Ub6zJC1UVzxQYBg7491fE7QZsh+xIyvb6zPo8Kz3xIEr6cWBJpujeNd87BIugY3u1a6GVl7qRhHh7nh6y25MHRrVYWudWt8U2wQcch7x9Fa21O/yn9iCup1a2UPUuf9Ote1dB6g/sNollBGYV5KnmujBVZTybbI+7lb2jQkyhyfV1ORQrNysACZkUH4lQAfPFQmdBBNKiyICLlA4cunVaS7bXo+U2PKbrWy5i7UN8YZhc7LTkJavWHSEAmW5JjwIDAQAB",
+  "permissions": ["nativeMessaging"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["page.js"], "world": "MAIN", "run_at": "document_idle" },
+    { "matches": ["<all_urls>"], "js": ["bridge.js"], "run_at": "document_idle" }
+  ]
+}

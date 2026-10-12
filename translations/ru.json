@@ -1,0 +1,44 @@
+{
+    "Copy path": {
+        "Copy path": "Скопировать путь"
+    },
+    "Fade the widget out when no MPRIS player is active": {
+        "Fade the widget out when no MPRIS player is active": "Прятать виджет, когда ничего не играет"
+    },
+    "Full-size covers from the browser": {
+        "Full-size covers from the browser": "Обложки в полном размере из браузера"
+    },
+    "Helper not set up": {
+        "Helper not set up": "Помощник не подключён"
+    },
+    "Helper ready, waiting for the extension": {
+        "Helper ready, waiting for the extension": "Помощник готов, ждём расширение"
+    },
+    "Hide When Idle": {
+        "Hide When Idle": "Скрывать без музыки"
+    },
+    "Last cover: %1 at %2": {
+        "Last cover: %1 at %2": "Последняя обложка: %1 в %2"
+    },
+    "No supported browser found": {
+        "No supported browser found": "Подходящий браузер не найден"
+    },
+    "Open folder": {
+        "Open folder": "Открыть папку"
+    },
+    "Remove helper": {
+        "Remove helper": "Удалить помощника"
+    },
+    "Set up helper": {
+        "Set up helper": "Подключить помощника"
+    },
+    "The browser keeps loading the extension from this folder, so leave the plugin where it is. To remove everything, press Remove helper, remove the extension in the browser and uninstall the plugin.": {
+        "The browser keeps loading the extension from this folder, so leave the plugin where it is. To remove everything, press Remove helper, remove the extension in the browser and uninstall the plugin.": "Браузер загружает расширение из этой папки, поэтому плагин не стоит переносить. Чтобы убрать всё, нажмите «Удалить помощника», удалите расширение в браузере и удалите плагин."
+    },
+    "Then add the extension to the browser once: open chrome://extensions, turn on Developer mode, press Load unpacked and choose this folder:": {
+        "Then add the extension to the browser once: open chrome://extensions, turn on Developer mode, press Load unpacked and choose this folder:": "Затем один раз добавьте расширение в браузер: откройте chrome://extensions, включите режим разработчика, нажмите «Загрузить распакованное» и выберите эту папку:"
+    },
+    "Web players pass tiny covers to the system, often 100 pixels or less. A small extension for Chrome, Chromium, Brave, Edge or Vivaldi reads the full-size cover from the page and hands it to the widget through a local helper. It only reads what the page shows in the system media controls and sends nothing anywhere.": {
+        "Web players pass tiny covers to the system, often 100 pixels or less. A small extension for Chrome, Chromium, Brave, Edge or Vivaldi reads the full-size cover from the page and hands it to the widget through a local helper. It only reads what the page shows in the system media controls and sends nothing anywhere.": "Веб-плееры отдают системе крошечные обложки, часто 100 пикселей и меньше. Небольшое расширение для Chrome, Chromium, Brave, Edge или Vivaldi берёт со страницы обложку в полном размере и передаёт её виджету через локального помощника. Оно читает только то, что страница показывает в системном управлении медиа, и никуда ничего не отправляет."
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "id": "albumCover",
+    "name": "Album Cover",
+    "description": "Square album-cover desktop widget with play, previous and next over MPRIS. A small browser extension supplies full-size covers from web players such as YouTube Music and Yandex Music",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": "ilyamen",
+    "icon": "album",
+    "type": "desktop",
+    "capabilities": ["desktop-widget", "mpris", "media"],
+    "component": "./AlbumCover.qml",
+    "settings": "./AlbumCoverSettings.qml",
+    "requires_dms": ">=1.6.0",
+    "permissions": [
+        "settings_read",
+        "settings_write",
+        "process"
+    ]
+}
