@@ -10,9 +10,9 @@ Web players such as YouTube Music and Yandex Music pass tiny covers to MPRIS, of
 
 The plugin comes with a small extension for Chromium-based browsers (Chrome, Chromium, Brave, Edge, Vivaldi) that reads the largest cover from `navigator.mediaSession` and passes it to a local helper through native messaging. The helper writes it to `~/.cache/dms-album-cover/now-playing.json`, and the widget uses it while its title matches the playing track. Nothing is sent anywhere, and the extension reads nothing on the page besides the media session.
 
-To set it up, open the plugin settings in DMS:
+To set it up (the settings are on the widget's card in Settings → Desktop Widgets):
 
-1. Press **Set up helper**. This registers the helper with every supported browser that has a profile.
+1. The widget registers the helper with every supported browser that has a profile as soon as it loads. If you install a browser later, press **Set up helper** in the settings.
 2. Open `chrome://extensions`, turn on Developer mode, press **Load unpacked** and choose the `browser/extension` folder of the plugin. The settings page shows the path and can copy it.
 
 The browser loads the extension from the plugin folder, so keep the plugin where it is.
@@ -27,7 +27,7 @@ git clone https://github.com/ilyamen/dms-album-cover ~/.config/DankMaterialShell
 
 ## Removal
 
-Press **Remove helper** in the plugin settings, remove the extension in the browser, then uninstall the plugin. `browser/register.sh uninstall` removes the helper registration from the command line.
+Uninstall the plugin in Settings → Plugins. When the widget unloads and finds its plugin disabled or gone, it removes the helper registrations from the browsers and its cache in `~/.cache/dms-album-cover`. Remove the extension in the browser yourself. `browser/register.sh uninstall` removes the registrations from the command line.
 
 ## License
 

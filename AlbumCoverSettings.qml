@@ -32,8 +32,8 @@ PluginSettings {
         });
     }
 
-    function register(action) {
-        Proc.runCommand("albumCover.register", ["sh", pluginDir + "/browser/register.sh", action], () => refresh());
+    function register() {
+        Proc.runCommand("albumCover.register", ["sh", pluginDir + "/browser/register.sh", "install"], () => refresh());
     }
 
     FileView {
@@ -129,15 +129,9 @@ PluginSettings {
                     visible: !root.allRegistered && root.browsers.length > 0
                     text: I18n.trFor("albumCover", "Set up helper")
                     iconName: "download"
-                    onClicked: root.register("install")
+                    onClicked: root.register()
                 }
 
-                DankButton {
-                    visible: root.anyRegistered
-                    text: I18n.trFor("albumCover", "Remove helper")
-                    iconName: "delete"
-                    onClicked: root.register("uninstall")
-                }
             }
         }
     }
@@ -193,7 +187,7 @@ PluginSettings {
 
             StyledText {
                 width: parent.width
-                text: I18n.trFor("albumCover", "The browser keeps loading the extension from this folder, so leave the plugin where it is. To remove everything, press Remove helper, remove the extension in the browser and uninstall the plugin.")
+                text: I18n.trFor("albumCover", "The browser loads the extension from this folder, so leave the plugin where it is. Disabling or uninstalling the plugin removes the helper; remove the extension in the browser yourself.")
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.surfaceVariantText
                 wrapMode: Text.WordWrap

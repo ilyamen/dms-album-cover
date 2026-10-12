@@ -26,14 +26,11 @@
     "Open folder": {
         "Open folder": "Открыть папку"
     },
-    "Remove helper": {
-        "Remove helper": "Удалить помощника"
-    },
     "Set up helper": {
         "Set up helper": "Подключить помощника"
     },
-    "The browser keeps loading the extension from this folder, so leave the plugin where it is. To remove everything, press Remove helper, remove the extension in the browser and uninstall the plugin.": {
-        "The browser keeps loading the extension from this folder, so leave the plugin where it is. To remove everything, press Remove helper, remove the extension in the browser and uninstall the plugin.": "Браузер загружает расширение из этой папки, поэтому плагин не стоит переносить. Чтобы убрать всё, нажмите «Удалить помощника», удалите расширение в браузере и удалите плагин."
+    "The browser loads the extension from this folder, so leave the plugin where it is. Disabling or uninstalling the plugin removes the helper; remove the extension in the browser yourself.": {
+        "The browser loads the extension from this folder, so leave the plugin where it is. Disabling or uninstalling the plugin removes the helper; remove the extension in the browser yourself.": "Браузер загружает расширение из этой папки, поэтому плагин не стоит переносить. При выключении или удалении плагина помощник удаляется сам, а расширение из браузера удалите вручную."
     },
     "Then add the extension to the browser once: open chrome://extensions, turn on Developer mode, press Load unpacked and choose this folder:": {
         "Then add the extension to the browser once: open chrome://extensions, turn on Developer mode, press Load unpacked and choose this folder:": "Затем один раз добавьте расширение в браузер: откройте chrome://extensions, включите режим разработчика, нажмите «Загрузить распакованное» и выберите эту папку:"

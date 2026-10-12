@@ -55,6 +55,30 @@ DesktopPluginComponent {
         }
     }
 
+    // The browser helper is registered whenever the widget loads, so a fresh
+    // install or a moved plugin needs no extra step. DMS has no uninstall hook:
+    // when the widget unloads because the plugin was disabled or its folder is
+    // gone, the registrations and the cache are removed here instead.
+    readonly property string pluginDir: PluginService.availablePlugins["albumCover"]?.pluginDirectory ?? ""
+    property string registeredDir: ""
+
+    onPluginDirChanged: {
+        if (pluginDir === "" || pluginDir === registeredDir)
+            return;
+        registeredDir = pluginDir;
+        Proc.runCommand("albumCover.register", ["sh", pluginDir + "/browser/register.sh", "install"], () => {});
+    }
+
+    Component.onDestruction: {
+        if (registeredDir === "")
+            return;
+        const disabled = SettingsData.getPluginSetting("albumCover", "enabled", true) === false;
+        Proc.runCommand("albumCover.cleanup", ["sh", "-c", 'sleep 2; [ "$2" = disabled ] || [ ! -e "$1/plugin.json" ] || exit 0; '
+            + 'config=${XDG_CONFIG_HOME:-$HOME/.config}; '
+            + 'rm -f "$config"/*/NativeMessagingHosts/io.github.ilyamen.dms_album_cover.json "$config"/*/*/NativeMessagingHosts/io.github.ilyamen.dms_album_cover.json; '
+            + 'rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/dms-album-cover"', "sh", registeredDir, disabled ? "disabled" : "enabled"], () => {});
+    }
+
     function normTitle(s) {
         return (s || "").toString().trim().toLowerCase();
     }
