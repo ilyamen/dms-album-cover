@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import qs.Common
+import qs.DCommon.Widgets
 import qs.Services
 import qs.Widgets
 import qs.Modules.Plugins
@@ -90,7 +91,7 @@ PluginSettings {
             Row {
                 spacing: Theme.spacingS
 
-                DankIcon {
+                DIcon {
                     anchors.verticalCenter: parent.verticalCenter
                     name: root.lastCover ? "check_circle" : root.anyRegistered ? "pending" : "warning"
                     size: Theme.iconSize
@@ -125,7 +126,7 @@ PluginSettings {
             Row {
                 spacing: Theme.spacingS
 
-                DankButton {
+                DButton {
                     visible: !root.allRegistered && root.browsers.length > 0
                     text: I18n.trFor("albumCover", "Set up helper")
                     iconName: "download"
@@ -170,14 +171,14 @@ PluginSettings {
             Row {
                 spacing: Theme.spacingS
 
-                DankButton {
+                DButton {
                     text: I18n.trFor("albumCover", "Copy path")
                     iconName: "content_copy"
                     enabled: (root.status?.extension ?? "") !== ""
                     onClicked: Paths.copyPathToClipboard(root.status.extension)
                 }
 
-                DankButton {
+                DButton {
                     text: I18n.trFor("albumCover", "Open folder")
                     iconName: "folder_open"
                     enabled: (root.status?.extension ?? "") !== ""

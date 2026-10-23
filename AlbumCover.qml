@@ -4,6 +4,7 @@ import Quickshell.Io
 import Quickshell.Services.Mpris
 import Quickshell.Widgets
 import qs.Common
+import qs.DCommon.Widgets
 import qs.Services
 import qs.Widgets
 import qs.Modules.Plugins
@@ -177,7 +178,7 @@ DesktopPluginComponent {
             visible: !cover.visible
             width: parent.width - Theme.spacingL * 2
 
-            DankIcon {
+            DIcon {
                 name: "album"
                 size: Math.round(Math.max(Theme.iconSizeLarge, root.side * 0.28))
                 color: Theme.surfaceVariantText
@@ -222,7 +223,7 @@ DesktopPluginComponent {
             spacing: root.controlSpacing
             z: 2
 
-            DankActionButton {
+            DActionButton {
                 buttonSize: root.skipSize
                 radius: root.skipSize / 2
                 iconName: "skip_previous"
@@ -241,7 +242,7 @@ DesktopPluginComponent {
                 color: root.accent
                 opacity: root.hasPlayer ? 1 : 0.45
 
-                DankIcon {
+                DIcon {
                     anchors.centerIn: parent
                     name: root.isPlaying ? "pause" : "play_arrow"
                     size: root.playIconSize
@@ -260,7 +261,7 @@ DesktopPluginComponent {
                 }
             }
 
-            DankActionButton {
+            DActionButton {
                 buttonSize: root.skipSize
                 radius: root.skipSize / 2
                 iconName: "skip_next"
